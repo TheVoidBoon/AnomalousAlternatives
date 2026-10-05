@@ -1,0 +1,13 @@
+{
+  "itemGroup.scpanomalousalternatives": "Example Mod Tab",
+  "block.scpanomalousalternatives.example_block": "Example Block",
+  "item.scpanomalousalternatives.example_item": "Example Item",
+
+  "scpanomalousalternatives.configuration.title": "SCP_Anomalous_Alternatives Configs",
+  "scpanomalousalternatives.configuration.section.scpanomalousalternatives.common.toml": "SCP_Anomalous_Alternatives Configs",
+  "scpanomalousalternatives.configuration.section.scpanomalousalternatives.common.toml.title": "SCP_Anomalous_Alternatives Configs",
+  "scpanomalousalternatives.configuration.items": "Item List",
+  "scpanomalousalternatives.configuration.logDirtBlock": "Log Dirt Block",
+  "scpanomalousalternatives.configuration.magicNumberIntroduction": "Magic Number Text",
+  "scpanomalousalternatives.configuration.magicNumber": "Magic Number"
+}
