@@ -24,10 +24,15 @@ public class ModModelProvider extends ModelProvider{
         itemModels.generateFlatItem(ModItems.BANANA.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.Scp035.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.SCP3521.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.SCP207.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.RAW_TITANIUM.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.TITANIUM_INGOT.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.TITANIUM_NUGGET.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.TITANIUM_PLATE.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.RAW_VENISON.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.COOKED_VENISON.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.DEER_SPAWN_EGG.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.SCP131_SPAWN_EGG.get(), ModelTemplates.FLAT_ITEM);
 
 
         /* BLOCKS */

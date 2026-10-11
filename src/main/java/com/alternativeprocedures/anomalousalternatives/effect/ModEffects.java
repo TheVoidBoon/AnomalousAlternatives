@@ -13,7 +13,9 @@ public class ModEffects {
             DeferredRegister.create(BuiltInRegistries.MOB_EFFECT, SCPAnomalousAlternatives.MODID);
 
     public static  final Holder<MobEffect> BANANA_INFLATION_EFFECT = MOB_EFFECTS.register("banana_inflation",
-        () -> new BananaInflationEffect(MobEffectCategory.NEUTRAL, 0x36ebab));
+        () -> new BananaInflationEffect(MobEffectCategory.HARMFUL, 0x36ebab));
+    public static final Holder<MobEffect> COLA_OVERDOSE_EFFECT = MOB_EFFECTS.register("cola_overdose",
+            () -> new ColaOverdoseEffect(MobEffectCategory.NEUTRAL, 0x36ebab));
 
 
 

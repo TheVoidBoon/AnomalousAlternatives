@@ -104,14 +104,17 @@ public class ModRecipeProvider extends RecipeProvider {
         shapeless(RecipeCategory.MISC, ModItems.TITANIUM_NUGGET.get(), 9)
                 .requires(ModItems.TITANIUM_INGOT)
                 .unlockedBy(getHasName(ModItems.TITANIUM_INGOT.get()), has(ModItems.TITANIUM_INGOT))
-                .group("titanium")
+                .group("meat")
                 .save(output);
 
 
 
 
         List<ItemLike> TITANIUM_SMELTABLES = List.of(ModItems.RAW_TITANIUM,ModBlocks.TITANIUM_ORE,ModBlocks.DEEPSLATE_TITANIUM_ORE);
+        List<ItemLike> VENISON_SMELTABLES = List.of(ModItems.RAW_VENISON);
 
+
+        oreSmelting(VENISON_SMELTABLES, RecipeCategory.FOOD,CookingBookCategory.FOOD,ModItems.COOKED_VENISON.get(),0.25f, 200, "meat");
         oreSmelting(TITANIUM_SMELTABLES, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.TITANIUM_INGOT.get(), 0.25f, 200,"titanium");
         oreBlasting(TITANIUM_SMELTABLES, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.TITANIUM_INGOT.get(), 0.25f, 100,"titanium");
 

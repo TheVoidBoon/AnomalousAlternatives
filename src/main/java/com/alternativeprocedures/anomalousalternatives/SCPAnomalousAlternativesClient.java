@@ -1,12 +1,20 @@
 package com.alternativeprocedures.anomalousalternatives;
 
+import com.alternativeprocedures.anomalousalternatives.entity.ModEntities;
+import com.alternativeprocedures.anomalousalternatives.entity.client.deer.DeerModel;
+import com.alternativeprocedures.anomalousalternatives.entity.client.deer.DeerRenderer;
+import com.alternativeprocedures.anomalousalternatives.entity.client.scp131.scp131Model;
+import com.alternativeprocedures.anomalousalternatives.entity.client.scp131.scp131Renderer;
+import com.alternativeprocedures.anomalousalternatives.entity.client.ModModelLayerLocations;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 
@@ -22,10 +30,24 @@ public class SCPAnomalousAlternativesClient {
         container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
     }
 
+
     @SubscribeEvent
     static void onClientSetup(FMLClientSetupEvent event) {
+        EntityRenderers.register(ModEntities.DEER.get(), DeerRenderer::new);
+        EntityRenderers.register(ModEntities.SCP131.get(), scp131Renderer::new);
+
         // Some client setup code
         SCPAnomalousAlternatives.LOGGER.info("HELLO FROM CLIENT SETUP");
         SCPAnomalousAlternatives.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+
+
     }
+
+
+    @SubscribeEvent
+    public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event){
+        event.registerLayerDefinition(ModModelLayerLocations.DEER, DeerModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayerLocations.SCP131, scp131Model::createBodyLayer);
+    }
+
 }

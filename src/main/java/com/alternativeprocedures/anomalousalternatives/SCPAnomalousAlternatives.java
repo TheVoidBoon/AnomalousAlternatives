@@ -4,6 +4,7 @@ import com.alternativeprocedures.anomalousalternatives.block.ModBlocks;
 import com.alternativeprocedures.anomalousalternatives.creativemodetab.ModCreativeModeTabs;
 import com.alternativeprocedures.anomalousalternatives.data.ModDataComponents;
 import com.alternativeprocedures.anomalousalternatives.effect.ModEffects;
+import com.alternativeprocedures.anomalousalternatives.entity.ModEntities;
 import com.alternativeprocedures.anomalousalternatives.item.ModItems;
 import org.slf4j.Logger;
 
@@ -37,10 +38,13 @@ public class SCPAnomalousAlternatives {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModEffects.register(modEventBus);
+        ModEntities.register(modEventBus);
 
         ModCreativeModeTabs.register(modEventBus);
 
         ModDataComponents.register(modEventBus);
+
+
 
 
         NeoForge.EVENT_BUS.register(this);
@@ -60,18 +64,13 @@ public class SCPAnomalousAlternatives {
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
             event.accept(ModItems.BANANA);
-
-
+            event.accept(ModItems.RAW_VENISON);
+            event.accept(ModItems.COOKED_VENISON);
+        }
+        if(event.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
+            event.accept(ModItems.DEER_SPAWN_EGG);
         }
 
-        if(event.getTabKey() == CreativeModeTabs.COMBAT){
-            event.accept(ModItems.Scp035);
-
-        }
-
-        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){
-            event.accept(ModBlocks.CONCRETE_TILES);
-        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

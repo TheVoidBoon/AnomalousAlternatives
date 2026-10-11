@@ -25,6 +25,7 @@ public class ModCreativeModeTabs {
                 .displayItems((itemDisplayParameters, output) -> {
                     output.accept(ModItems.Scp035);
                     output.accept(ModItems.SCP3521);
+                    output.accept(ModItems.SCP207);
                     output.accept(ModItems.TITANIUM_PLATE);
                     output.accept(ModItems.TITANIUM_NUGGET);
                     output.accept(ModItems.TITANIUM_INGOT);

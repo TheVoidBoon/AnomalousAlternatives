@@ -1,10 +1,12 @@
 package com.alternativeprocedures.anomalousalternatives.item;
 
 import com.alternativeprocedures.anomalousalternatives.SCPAnomalousAlternatives;
+import com.alternativeprocedures.anomalousalternatives.entity.ModEntities;
 import com.alternativeprocedures.anomalousalternatives.food.ModFoods;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.TooltipDisplay;
 import net.neoforged.bus.api.IEventBus;
@@ -26,14 +28,32 @@ public class ModItems {
 
     public static final DeferredItem<Item> BANANA = ITEMS.registerItem("banana",
             properties -> new Item(properties.food(ModFoods.BANANA, ModFoods.BANANA_CONSUMABLE)));
+    public static final DeferredItem<Item> RAW_VENISON = ITEMS.registerItem("raw_venison",
+            properties -> new Item(properties.food(ModFoods.RAW_VENISON, ModFoods.RAW_VENISON_CONSUMABLE)));
+    public static final DeferredItem<Item> COOKED_VENISON = ITEMS.registerItem("cooked_venison",
+            properties -> new Item(properties.food(ModFoods.COOKED_VENISON, ModFoods.COOKED_VENISON_CONSUMABLE)));
+    public static final DeferredItem<Item> DEER_SPAWN_EGG = ITEMS.registerItem("deer_spawn_egg",
+            properties -> new SpawnEggItem(properties.spawnEgg(ModEntities.DEER.get())));
+    public static final DeferredItem<Item> SCP131_SPAWN_EGG = ITEMS.registerItem("scp131_spawn_egg",
+            properties -> new SpawnEggItem(properties.spawnEgg(ModEntities.SCP131.get())));
+
     public static final DeferredItem<Item> SCP3521= ITEMS.registerItem("scp3521",
             properties -> new Item(properties.food(ModFoods.SCP3521, ModFoods.SCP3521_CONSUMABLE)){
                 @Override
                 public void appendHoverText(ItemStack itemStack, TooltipContext context, TooltipDisplay display, Consumer<Component> builder, TooltipFlag tooltipFlag) {
-                    builder.accept(Component.translatable("tooltip.scpanomalousalternatives.scp3521.tooltip"));
+                    builder.accept(Component.translatable("tooltip.scpanomalousalternatives.safescp.tooltip"));
                     super.appendHoverText(itemStack, context, display, builder, tooltipFlag);
                 }
             });
+    public static final DeferredItem<Item> SCP207= ITEMS.registerItem("scp207",
+            properties -> new Item(properties.food(ModFoods.SCP207, ModFoods.SCP207_CONSUMABLE)){
+                @Override
+                public void appendHoverText(ItemStack itemStack, TooltipContext context, TooltipDisplay display, Consumer<Component> builder, TooltipFlag tooltipFlag) {
+                    builder.accept(Component.translatable("tooltip.scpanomalousalternatives.safescp.tooltip"));
+                    super.appendHoverText(itemStack, context, display, builder, tooltipFlag);
+                }
+            });
+
 
 
 
