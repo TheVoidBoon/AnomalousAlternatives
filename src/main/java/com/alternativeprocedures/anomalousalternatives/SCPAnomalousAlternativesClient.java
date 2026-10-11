@@ -1,4 +1,4 @@
-package com.alternativeprocedures.anomalousalternates;
+package com.alternativeprocedures.anomalousalternatives;
 
 import net.minecraft.client.Minecraft;
 import net.neoforged.api.distmarker.Dist;
