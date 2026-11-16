@@ -22,6 +22,7 @@ public class ModModelProvider extends ModelProvider{
     @Override
     protected void registerModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels){
         itemModels.generateFlatItem(ModItems.BANANA.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.GARLOID.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.Scp035.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.SCP3521.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.SCP207.get(), ModelTemplates.FLAT_ITEM);
@@ -33,17 +34,24 @@ public class ModModelProvider extends ModelProvider{
         itemModels.generateFlatItem(ModItems.COOKED_VENISON.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.DEER_SPAWN_EGG.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.SCP131_SPAWN_EGG.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.SCP049_SPAWN_EGG.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.SCP049_2_SPAWN_EGG.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.SCP6448_SPAWN_EGG.get(), ModelTemplates.FLAT_ITEM);
 
 
         /* BLOCKS */
 
         blockModels.createTrivialCube(ModBlocks.CONCRETE_TILES.get());
+        blockModels.createTrivialCube(ModBlocks.CHECKERED_TILES.get());
+        blockModels.createTrivialCube(ModBlocks.METAL_GRATE.get());
         blockModels.createTrivialCube(ModBlocks.TITANIUM_ORE.get());
         blockModels.createTrivialCube(ModBlocks.DEEPSLATE_TITANIUM_ORE.get());
         blockModels.createTrivialCube(ModBlocks.TITANIUM_BLOCK.get());
         blockModels.createTrivialCube(ModBlocks.METAL_PLATING.get());
+        blockModels.createDoor(ModBlocks.HEAVY_DOOR.get());
+        blockModels.createPlant(ModBlocks.LAVENDER_FLOWER.get(),ModBlocks.POTTED_LAVENDER_FLOWER.get(), BlockModelGenerators.PlantType.NOT_TINTED);
 
-
+        blockModels.createNonTemplateModelBlock(ModBlocks.FLAT_LAMP.get());
 
     }
 

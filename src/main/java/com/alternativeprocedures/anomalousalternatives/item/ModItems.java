@@ -25,6 +25,7 @@ public class ModItems {
     public static final DeferredItem<Item> TITANIUM_INGOT = ITEMS.registerSimpleItem("titanium_ingot");
     public static final DeferredItem<Item> TITANIUM_NUGGET = ITEMS.registerSimpleItem("titanium_nugget");
     public static final DeferredItem<Item> TITANIUM_PLATE = ITEMS.registerSimpleItem("titanium_plate");
+    public static final DeferredItem<Item> GARLOID = ITEMS.registerSimpleItem("garloid");
 
     public static final DeferredItem<Item> BANANA = ITEMS.registerItem("banana",
             properties -> new Item(properties.food(ModFoods.BANANA, ModFoods.BANANA_CONSUMABLE)));
@@ -35,6 +36,12 @@ public class ModItems {
     public static final DeferredItem<Item> DEER_SPAWN_EGG = ITEMS.registerItem("deer_spawn_egg",
             properties -> new SpawnEggItem(properties.spawnEgg(ModEntities.DEER.get())));
     public static final DeferredItem<Item> SCP131_SPAWN_EGG = ITEMS.registerItem("scp131_spawn_egg",
+            properties -> new SpawnEggItem(properties.spawnEgg(ModEntities.SCP131.get())));
+    public static final DeferredItem<Item> SCP049_SPAWN_EGG = ITEMS.registerItem("scp049_spawn_egg",
+            properties -> new SpawnEggItem(properties.spawnEgg(ModEntities.SCP049.get())));
+    public static final DeferredItem<Item> SCP049_2_SPAWN_EGG = ITEMS.registerItem("scp049_2_spawn_egg",
+            properties -> new SpawnEggItem(properties.spawnEgg(ModEntities.SCP049_2.get())));
+    public static final DeferredItem<Item> SCP6448_SPAWN_EGG = ITEMS.registerItem("scp6448_spawn_egg",
             properties -> new SpawnEggItem(properties.spawnEgg(ModEntities.SCP131.get())));
 
     public static final DeferredItem<Item> SCP3521= ITEMS.registerItem("scp3521",

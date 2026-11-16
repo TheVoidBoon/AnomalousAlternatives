@@ -3,6 +3,10 @@ package com.alternativeprocedures.anomalousalternatives;
 import com.alternativeprocedures.anomalousalternatives.entity.ModEntities;
 import com.alternativeprocedures.anomalousalternatives.entity.client.deer.DeerModel;
 import com.alternativeprocedures.anomalousalternatives.entity.client.deer.DeerRenderer;
+import com.alternativeprocedures.anomalousalternatives.entity.client.scp049.scp049Model;
+import com.alternativeprocedures.anomalousalternatives.entity.client.scp049.scp049Renderer;
+import com.alternativeprocedures.anomalousalternatives.entity.client.scp049_2.scp049_2Model;
+import com.alternativeprocedures.anomalousalternatives.entity.client.scp049_2.scp049_2Renderer;
 import com.alternativeprocedures.anomalousalternatives.entity.client.scp131.scp131Model;
 import com.alternativeprocedures.anomalousalternatives.entity.client.scp131.scp131Renderer;
 import com.alternativeprocedures.anomalousalternatives.entity.client.ModModelLayerLocations;
@@ -35,6 +39,8 @@ public class SCPAnomalousAlternativesClient {
     static void onClientSetup(FMLClientSetupEvent event) {
         EntityRenderers.register(ModEntities.DEER.get(), DeerRenderer::new);
         EntityRenderers.register(ModEntities.SCP131.get(), scp131Renderer::new);
+        EntityRenderers.register(ModEntities.SCP049.get(), scp049Renderer::new);
+        EntityRenderers.register(ModEntities.SCP049_2.get(), scp049_2Renderer::new);
 
         // Some client setup code
         SCPAnomalousAlternatives.LOGGER.info("HELLO FROM CLIENT SETUP");
@@ -48,6 +54,8 @@ public class SCPAnomalousAlternativesClient {
     public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event){
         event.registerLayerDefinition(ModModelLayerLocations.DEER, DeerModel::createBodyLayer);
         event.registerLayerDefinition(ModModelLayerLocations.SCP131, scp131Model::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayerLocations.SCP049, scp049Model::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayerLocations.SCP049_2, scp049_2Model::createBodyLayer);
     }
 
 }

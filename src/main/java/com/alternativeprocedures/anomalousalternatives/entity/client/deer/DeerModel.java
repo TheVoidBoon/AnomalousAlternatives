@@ -58,7 +58,7 @@ public class DeerModel extends EntityModel<DeerRenderState> {
 
         PartDefinition Neck = Head.addOrReplaceChild("Neck", CubeListBuilder.create(), PartPose.offset(-0.5F, 13.0F, 8.5F));
 
-        PartDefinition Neck_r1 = Neck.addOrReplaceChild("Neck_r1", CubeListBuilder.create().texOffs(18, 41).addBox(-1.8F, -3.0F, -3.0F, 3.8F, 7.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.4F, -8.0F, -8.0F, 0.4363F, 0.0F, 0.0F));
+        PartDefinition Neck_r1 = Neck.addOrReplaceChild("Neck_r1", CubeListBuilder.create().texOffs(18, 41).addBox(-1.5F, -3.0F, -3.0F, 3F, 7.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.4F, -8.0F, -8.0F, 0.4363F, 0.0F, 0.0F));
 
         PartDefinition Antlers = Head.addOrReplaceChild("Antlers", CubeListBuilder.create(), PartPose.offset(0.0F, 25.0F, 7.5F));
 

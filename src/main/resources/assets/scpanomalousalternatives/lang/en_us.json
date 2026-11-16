@@ -1,5 +1,6 @@
 {
   "item.scpanomalousalternatives.banana" : "Banana",
+  "item.scpanomalousalternatives.garloid" : "Garloid",
   "item.scpanomalousalternatives.scp035" : "SCP-035",
   "item.scpanomalousalternatives.scp3521" : "SCP-3521",
   "item.scpanomalousalternatives.scp207" : "SCP-207",
@@ -11,21 +12,34 @@
   "item.scpanomalousalternatives.cooked_venison" : "Cooked Venison",
   "item.scpanomalousalternatives.deer_spawn_egg" : "Deer Spawn Egg",
   "item.scpanomalousalternatives.scp131_spawn_egg" : "SCP-131 Spawn Egg",
+  "item.scpanomalousalternatives.scp049_spawn_egg" : "SCP-049 Spawn Egg",
+  "item.scpanomalousalternatives.scp049_2_spawn_egg" : "SCP-049-2 Spawn Egg",
+  "item.scpanomalousalternatives.scp6448_spawn_egg" : "SCP-6448 Spawn Egg",
 
   "block.scpanomalousalternatives.concrete_tiles" : "Concrete Tiles",
+  "block.scpanomalousalternatives.checkered_tiles" : "Checkered Tiles",
   "block.scpanomalousalternatives.titanium_ore" : "Titanium Ore",
   "block.scpanomalousalternatives.deepslate_titanium_ore" : "Deepslate Titanium Ore",
   "block.scpanomalousalternatives.titanium_block" : "Block of Titanium",
   "block.scpanomalousalternatives.banana_inflation" : "Block of Titanium",
   "block.scpanomalousalternatives.metal_plating" : "Metal Plating",
+  "block.scpanomalousalternatives.metal_grate" : "Metal Grate",
+  "block.scpanomalousalternatives.lavender_flower" : "Lavender Flower",
+  "block.scpanomalousalternatives.heavy_door" : "Heavy Door",
+  "block.scpanomalousalternatives.flat_lamp" : "Flat Lamp",
 
   "entity.scpanomalousalternatives.deer" : "Deer",
+  "entity.scpanomalousalternatives.scp131" : "SCP-131",
+  "entity.scpanomalousalternatives.scp049" : "SCP-049",
+  "entity.scpanomalousalternatives.scp049_2" : "SCP-049-2",
 
   "creativemodetab.anomalousalternatives_items": "Anomalous Items",
   "creativemodetab.anomalousalternatives_blocks": "Anomalous Blocks",
 
   "effect.scpanomalousalternatives.cola_overdose" : "Cola Overdose",
   "effect.scpanomalousalternatives.banana_inflation" : "Banana Inflation",
+  "effect.scpanomalousalternatives.heart_attack" : "Heart Attack",
+  "effect.scpanomalousalternatives.lavender_scent" : "Lavender Scent",
 
   "painting.scpanomalousalternatives.tung.title" : "Tung",
 

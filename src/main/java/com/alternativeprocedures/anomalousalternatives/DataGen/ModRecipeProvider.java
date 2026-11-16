@@ -15,6 +15,7 @@ import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.CookingBookCategory;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Blocks;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -68,6 +69,17 @@ public class ModRecipeProvider extends RecipeProvider {
                 .group("titanium")
                 .save(output);
 
+        shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.METAL_GRATE.get(), 2)
+                .pattern("III")
+                .pattern("ITI")
+                .pattern("III")
+                .define('T', ModItems.TITANIUM_PLATE.get())
+                .define('I', Items.IRON_NUGGET)
+                .unlockedBy(getHasName(ModItems.TITANIUM_PLATE.get()), has(ModItems.TITANIUM_PLATE))
+                .unlockedBy(getHasName(Items.IRON_NUGGET), has(Items.IRON_NUGGET))
+                .group("titanium")
+                .save(output);
+
         shaped(RecipeCategory.MISC, ModItems.TITANIUM_INGOT.get())
                 .pattern("TTT")
                 .pattern("TTT")
@@ -77,7 +89,32 @@ public class ModRecipeProvider extends RecipeProvider {
                 .group("titanium")
                 .save(output);
 
-        shaped(RecipeCategory.MISC, ModItems.TITANIUM_PLATE.get())
+        shaped(RecipeCategory.FOOD, ModItems.SCP207.get())
+                .pattern("SBS")
+                .pattern("SWS")
+                .pattern("SRS")
+                .define('S', Items.SUGAR)
+                .define('B', Items.BLACK_DYE)
+                .define('W', Items.POTION)
+                .define('R', Items.REDSTONE)
+                .unlockedBy(getHasName(Items.SUGAR), has(Items.SUGAR))
+                .unlockedBy(getHasName(Items.BLACK_DYE), has(Items.BLACK_DYE))
+                .unlockedBy(getHasName(Items.POTION), has(Items.POTION))
+                .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
+                .group("scp")
+                .save(output);
+
+        shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.HEAVY_DOOR.get())
+                .pattern("T")
+                .pattern("I")
+                .pattern("T")
+                .define('T', ModItems.TITANIUM_PLATE.get())
+                .define('I', Blocks.IRON_DOOR)
+                .unlockedBy(getHasName(ModItems.TITANIUM_PLATE.get()), has(ModItems.TITANIUM_PLATE))
+                .group("titanium")
+                .save(output);
+
+        shaped(RecipeCategory.MISC, ModItems.TITANIUM_PLATE.get(), 2)
                 .pattern("TI")
                 .pattern("IT")
                 .define('T', ModItems.TITANIUM_INGOT.get())
@@ -87,11 +124,35 @@ public class ModRecipeProvider extends RecipeProvider {
                 .group("titanium")
                 .save(output);
 
-        shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CONCRETE_TILES.get())
+        shaped(RecipeCategory.MISC, ModBlocks.FLAT_LAMP.get(), 4)
+                .pattern("III")
+                .pattern("GLG")
+                .pattern(" G ")
+                .define('G', Items.GLASS)
+                .define('I', Items.IRON_NUGGET)
+                .define('L', Items.GLOWSTONE_DUST)
+                .unlockedBy(getHasName(Items.GLOWSTONE_DUST), has(Items.GLOWSTONE_DUST))
+                .unlockedBy(getHasName(Items.IRON_NUGGET), has(Items.IRON_NUGGET))
+                .unlockedBy(getHasName(Items.GLASS), has(Items.GLASS))
+                .group("light")
+                .save(output);
+
+        shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CONCRETE_TILES.get(), 4)
                 .pattern("CC")
                 .pattern("CC")
                 .define('C', Items.WHITE_CONCRETE)
                 .unlockedBy(getHasName(Items.WHITE_CONCRETE), has(Items.WHITE_CONCRETE))
+                .group("concrete")
+                .save(output);
+
+        shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHECKERED_TILES.get(), 8)
+                .pattern("CCC")
+                .pattern("CDC")
+                .pattern("CCC")
+                .define('C', Items.WHITE_CONCRETE)
+                .define('D', Items.BLACK_DYE)
+                .unlockedBy(getHasName(Items.WHITE_CONCRETE), has(Items.WHITE_CONCRETE))
+                .unlockedBy(getHasName(Items.BLACK_DYE), has(Items.BLACK_DYE))
                 .group("concrete")
                 .save(output);
 
@@ -104,8 +165,9 @@ public class ModRecipeProvider extends RecipeProvider {
         shapeless(RecipeCategory.MISC, ModItems.TITANIUM_NUGGET.get(), 9)
                 .requires(ModItems.TITANIUM_INGOT)
                 .unlockedBy(getHasName(ModItems.TITANIUM_INGOT.get()), has(ModItems.TITANIUM_INGOT))
-                .group("meat")
+                .group("titanium")
                 .save(output);
+
 
 
 

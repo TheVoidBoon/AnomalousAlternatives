@@ -1,0 +1,11 @@
+package com.alternativeprocedures.anomalousalternatives.entity.client.scp049;
+
+import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
+import net.minecraft.world.entity.AnimationState;
+
+public class scp049RenderState extends LivingEntityRenderState {
+
+
+    public final AnimationState idleAnimationState = new AnimationState();
+    public final AnimationState targetingAnimationState = new AnimationState();
+}

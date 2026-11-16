@@ -69,6 +69,13 @@ public class SCPAnomalousAlternatives {
         }
         if(event.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
             event.accept(ModItems.DEER_SPAWN_EGG);
+            event.accept(ModItems.SCP131_SPAWN_EGG);
+            event.accept(ModItems.SCP049_SPAWN_EGG);
+            event.accept(ModItems.SCP049_2_SPAWN_EGG);
+            event.accept(ModItems.SCP6448_SPAWN_EGG);
+        }
+        if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS){
+            event.accept(ModBlocks.LAVENDER_FLOWER);
         }
 
     }

@@ -16,6 +16,10 @@ public class ModEffects {
         () -> new BananaInflationEffect(MobEffectCategory.HARMFUL, 0x36ebab));
     public static final Holder<MobEffect> COLA_OVERDOSE_EFFECT = MOB_EFFECTS.register("cola_overdose",
             () -> new ColaOverdoseEffect(MobEffectCategory.NEUTRAL, 0x36ebab));
+    public static final Holder<MobEffect> HEART_ATTACK_EFFECT = MOB_EFFECTS.register("heart_attack",
+            () -> new HeartAttackEffect(MobEffectCategory.NEUTRAL, 0x34eaacc));
+    public static final Holder<MobEffect> LAVENDER_SCENT = MOB_EFFECTS.register("lavender_scent",
+            () -> new LavenderScentEffect(MobEffectCategory.BENEFICIAL, 0x34eaaac));
 
 
 

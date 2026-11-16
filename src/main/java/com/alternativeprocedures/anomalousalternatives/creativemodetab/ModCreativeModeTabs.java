@@ -30,6 +30,7 @@ public class ModCreativeModeTabs {
                     output.accept(ModItems.TITANIUM_NUGGET);
                     output.accept(ModItems.TITANIUM_INGOT);
                     output.accept(ModItems.RAW_TITANIUM);
+                    output.accept(ModItems.GARLOID);
                 }).build() );
 
 
@@ -41,10 +42,14 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativemodetab.anomalousalternatives_blocks"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModBlocks.CONCRETE_TILES);
+                        output.accept(ModBlocks.CHECKERED_TILES);
                         output.accept(ModBlocks.TITANIUM_ORE);
                         output.accept(ModBlocks.DEEPSLATE_TITANIUM_ORE);
                         output.accept(ModBlocks.TITANIUM_BLOCK);
                         output.accept(ModBlocks.METAL_PLATING);
+                        output.accept(ModBlocks.METAL_GRATE);
+                        output.accept(ModBlocks.HEAVY_DOOR);
+                        output.accept(ModBlocks.FLAT_LAMP);
                     }).build() );
 
 

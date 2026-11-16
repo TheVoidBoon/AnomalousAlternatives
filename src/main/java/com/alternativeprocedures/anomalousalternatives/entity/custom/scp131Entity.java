@@ -1,16 +1,27 @@
 package com.alternativeprocedures.anomalousalternatives.entity.custom;
 
 
-import net.minecraft.world.entity.AnimationState;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.PathfinderMob;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.util.Util;
+import net.minecraft.world.DifficultyInstance;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import com.alternativeprocedures.anomalousalternatives.entity.variant.scp131Variant;
+import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
+import org.jspecify.annotations.Nullable;
 
 public class scp131Entity extends PathfinderMob {
+    private static final EntityDataAccessor<Integer> VARIANT =
+            SynchedEntityData.defineId(scp131Entity.class, EntityDataSerializers.INT);
+
 
     public final AnimationState idleAnimationState = new AnimationState();
     private int idleAnimationTimeout = 0;
@@ -59,4 +70,41 @@ public class scp131Entity extends PathfinderMob {
 
     }
 
+    @Override
+    protected void defineSynchedData(SynchedEntityData.Builder entityData) {
+        super.defineSynchedData(entityData);
+        entityData.define(VARIANT, 0);
+    }
+
+    private int getTypeVariant(){
+        return this.entityData.get(VARIANT);
+    }
+
+    public scp131Variant getVariant(){
+        return scp131Variant.byId(getTypeVariant());
+    }
+
+    private void setVariant(scp131Variant variant){
+        this.entityData.set(VARIANT, variant.getId());
+    }
+
+    @Override
+    protected void addAdditionalSaveData(ValueOutput output) {
+        super.addAdditionalSaveData(output);
+        output.putInt("Variant", this.getTypeVariant());
+    }
+
+    @Override
+    protected void readAdditionalSaveData(ValueInput input) {
+        super.readAdditionalSaveData(input);
+        this.entityData.set(VARIANT, input.getIntOr("Variant", 0));
+    }
+
+    @Override
+    public @Nullable SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty,
+                                                  EntitySpawnReason spawnReason, @Nullable SpawnGroupData groupData) {
+        scp131Variant variant = Util.getRandom(scp131Variant.values(), this.random);
+        this.setVariant(variant);
+        return super.finalizeSpawn(level, difficulty, spawnReason, groupData);
+    }
 }

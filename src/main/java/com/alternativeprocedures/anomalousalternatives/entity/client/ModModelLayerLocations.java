@@ -9,4 +9,8 @@ public class ModModelLayerLocations {
             new ModelLayerLocation(Identifier.fromNamespaceAndPath(SCPAnomalousAlternatives.MODID, "deer"), "main");
     public static final ModelLayerLocation SCP131 =
             new ModelLayerLocation(Identifier.fromNamespaceAndPath(SCPAnomalousAlternatives.MODID, "scp131"), "main");
+    public static final ModelLayerLocation SCP049 =
+            new ModelLayerLocation(Identifier.fromNamespaceAndPath(SCPAnomalousAlternatives.MODID, "scp049"), "main");
+    public static final ModelLayerLocation SCP049_2 =
+            new ModelLayerLocation(Identifier.fromNamespaceAndPath(SCPAnomalousAlternatives.MODID, "scp049_2"), "main");
 }

@@ -12,6 +12,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
@@ -29,14 +30,22 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
     @Override
     protected void generate() {
         dropSelf(ModBlocks.CONCRETE_TILES.get());
+        dropSelf(ModBlocks.CHECKERED_TILES.get());
         dropSelf(ModBlocks.TITANIUM_BLOCK.get());
         dropSelf(ModBlocks.METAL_PLATING.get());
+        dropSelf(ModBlocks.METAL_GRATE.get());
+        dropSelf(ModBlocks.LAVENDER_FLOWER.get());
+        dropSelf(ModBlocks.POTTED_LAVENDER_FLOWER.get());
+        dropSelf(ModBlocks.FLAT_LAMP.get());
+
 
         add(ModBlocks.TITANIUM_ORE.get(),
                 createOreDrop(ModBlocks.TITANIUM_ORE.get(), ModItems.RAW_TITANIUM.get()));
         add(ModBlocks.DEEPSLATE_TITANIUM_ORE.get(),
                 createOreDrop(ModBlocks.DEEPSLATE_TITANIUM_ORE.get(), ModItems.RAW_TITANIUM.get()));
 
+
+        add(ModBlocks.HEAVY_DOOR.get(), this::createDoorTable);
 
 
     }

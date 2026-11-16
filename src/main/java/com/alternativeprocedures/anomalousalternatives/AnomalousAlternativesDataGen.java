@@ -25,7 +25,10 @@ public class AnomalousAlternativesDataGen {
         generator.addProvider(true, new ModModelProvider(packOutput));
         generator.addProvider(true, new ModBlockTagsProvider(packOutput, lookupProvider));
         generator.addProvider(true, new LootTableProvider(packOutput, Collections.emptySet(),
-                List.of(new LootTableProvider.SubProviderEntry(ModBlockLootTableProvider::new, LootContextParamSets.BLOCK)), lookupProvider));
+                List.of(
+                        new LootTableProvider.SubProviderEntry(ModBlockLootTableProvider::new, LootContextParamSets.BLOCK),
+                        new LootTableProvider.SubProviderEntry(ModEntityLootTableProvider::new, LootContextParamSets.ENTITY)),
+                lookupProvider));
 
         generator.addProvider(true, new ModRecipeProvider.Runner(packOutput, lookupProvider));
         generator.addProvider(true, new ModDatapackProvider(packOutput, lookupProvider));
